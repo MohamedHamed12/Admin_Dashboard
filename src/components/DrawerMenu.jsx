@@ -11,6 +11,18 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import IconButton from "@mui/material/IconButton";
+import PeopleIcon from "@mui/icons-material/People";
+import CategoryIcon from "@mui/icons-material/Category";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+
+const icons = {
+  users: <PeopleIcon />,
+  categories: <CategoryIcon />,
+  products: <ShoppingCartIcon />,
+  orders: <ReceiptIcon />,
+};
+
 
 const drawerWidth = 240;
 
@@ -61,7 +73,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 );
 
 export default function DrawerMenu({ open, onClose, onSelect }) {
-  const menuItems = ["Inbox", "Starred", "Send email", "Drafts"];
+  const menuItems = ["users","categories","products","orders"];
 
   return (
     <Drawer variant="permanent" open={open}>
@@ -75,7 +87,9 @@ export default function DrawerMenu({ open, onClose, onSelect }) {
         {menuItems.map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton onClick={() => onSelect(text)}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+              <ListItemIcon>{icons[text] || <InboxIcon />}</ListItemIcon>
+
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>

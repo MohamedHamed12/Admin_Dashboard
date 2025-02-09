@@ -1,15 +1,24 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
+import Users from "../pages/users";
+
 
 export default function MainContent({ selectedItem }) {
+  console.log("selectedItem", selectedItem);
+  const getContent = () => {
+    switch (selectedItem) {
+      case "users":
+        console.log("users in switch");
+        return <Users />;
+    
+      default:
+        return <div>Default</div>;
+    }
+  };
+
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <Typography variant="h4" sx={{ mb: 2 }}>
-        {selectedItem}
-      </Typography>
-      <Typography>
-        This is the content for <strong>{selectedItem}</strong>.
-      </Typography>
+      {getContent()}
     </Box>
   );
 }
