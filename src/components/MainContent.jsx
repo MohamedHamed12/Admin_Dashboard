@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Users from "../pages/users";
+import Users from "../pages/user/UsersPage";
 
 
 export default function MainContent({ selectedItem }) {

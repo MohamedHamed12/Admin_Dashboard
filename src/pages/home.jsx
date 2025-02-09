@@ -49,7 +49,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Dynamic Drawer Content
+            Dashboard
           </Typography>
         </Toolbar>
       </AppBar>

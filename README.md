@@ -1,6 +1,11 @@
 ## Admin Dashboard
 
-This project is a work in progress.
+this is a admin dashboard project that includes user management, product management, and authentication features.
+## Images
+
+![users](/assets/users.png)
+
+## Project Structure
 
 ``` 
 admin-panel/
